@@ -9,6 +9,12 @@ Group:      Development/Perl
 Summary:    Framework for config validation and edition
 Url:        http://search.cpan.org/dist/%{upstream_name}
 Source:     http://www.cpan.org/modules/by-module/Config/%{upstream_name}-%{upstream_version}.tar.gz
+BuildRequires: perl(Test::Exception)
+BuildRequires: perl(Test::Warn)
+BuildRequires: perl(Log::Log4perl)
+BuildRequires: perl(Exception::Class)
+BuildRequires: perl(Config::Tiny)
+BuildRequires: perl(Parse::RecDescent)
 BuildArch: noarch
 BuildRoot:  %{_tmppath}/%{name}-%{version}
 
@@ -16,9 +22,12 @@ BuildRoot:  %{_tmppath}/%{name}-%{version}
 Using Config::Model, a typical configuration validation tool will be made
 of 3 parts :
 
-* 1
+ - The user interface
+ - The validation engine which is in charge of validating all the configuration
+   information provided by the user.
+ - The storage facility that store the configuration information
 
-  The user interface
+Config::Model provides a validation engine according to a set of rules.
 
 %prep
 %setup -q -n %{upstream_name}-%{upstream_version} 
