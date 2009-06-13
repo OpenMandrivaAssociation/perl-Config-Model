@@ -15,6 +15,7 @@ BuildRequires: perl(Log::Log4perl)
 BuildRequires: perl(Exception::Class)
 BuildRequires: perl(Config::Tiny)
 BuildRequires: perl(Parse::RecDescent)
+BuildRequires: perl(Carp::Assert::More)
 BuildArch: noarch
 BuildRoot:  %{_tmppath}/%{name}-%{version}
 
