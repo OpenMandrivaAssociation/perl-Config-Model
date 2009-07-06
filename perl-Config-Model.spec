@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 3
 License:    GPL or Artistic
 Group:      Development/Perl
 Summary:    Framework for config validation and edition
@@ -17,6 +17,7 @@ BuildRequires: perl(Config::Tiny)
 BuildRequires: perl(Parse::RecDescent)
 BuildRequires: perl(Carp::Assert::More)
 Requires: perl(Parse::RecDescent)
+Requires: perl(Exception::Class)
 BuildArch: noarch
 BuildRoot:  %{_tmppath}/%{name}-%{version}
 
