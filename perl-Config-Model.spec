@@ -1,9 +1,9 @@
 %define upstream_name       Config-Model
-%define upstream_version    0.638
+%define upstream_version    0.639
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 4
+Release:    %mkrel 1
 License:    GPL or Artistic
 Group:      Development/Perl
 Summary:    Framework for config validation and edition
