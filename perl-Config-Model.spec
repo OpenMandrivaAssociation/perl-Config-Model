@@ -9,18 +9,22 @@ Group:      Development/Perl
 Summary:    Framework for config validation and edition
 Url:        http://search.cpan.org/dist/%{upstream_name}
 Source:     http://www.cpan.org/modules/by-module/Config/%{upstream_name}-%{upstream_version}.tar.gz
+
+BuildRequires: perl(Carp::Assert::More)
+BuildRequires: perl(Config::Tiny)
+BuildRequires: perl(Exception::Class)
+BuildRequires: perl(Log::Log4perl)
+BuildRequires: perl(Parse::RecDescent)
 BuildRequires: perl(Test::Exception)
 BuildRequires: perl(Test::Warn)
-BuildRequires: perl(Log::Log4perl)
-BuildRequires: perl(Exception::Class)
-BuildRequires: perl(Config::Tiny)
-BuildRequires: perl(Parse::RecDescent)
-BuildRequires: perl(Carp::Assert::More)
+BuildRequires: perl(YAML::Any)
+
+BuildArch: noarch
+BuildRoot:  %{_tmppath}/%{name}-%{version}
+
 Requires: perl(Parse::RecDescent)
 Requires: perl(Exception::Class)
 Requires: perl(Carp::Assert::More)
-BuildArch: noarch
-BuildRoot:  %{_tmppath}/%{name}-%{version}
 
 %description
 Using Config::Model, a typical configuration validation tool will be made
@@ -57,4 +61,3 @@ rm -rf %buildroot
 %{perl_vendorlib}/Config
 %{_mandir}/man1/config-edit.1*
 %{_mandir}/man3/*
-
