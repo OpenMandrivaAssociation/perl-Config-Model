@@ -1,5 +1,5 @@
 %define upstream_name       Config-Model
-%define upstream_version 0.644
+%define upstream_version 1.001
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -57,7 +57,7 @@ rm -rf %buildroot
 %files
 %defattr(-,root,root)
 %doc README ChangeLog LICENSE
-%{_bindir}/config-edit
+%{_bindir}/config-edit*
 %{perl_vendorlib}/Config
-%{_mandir}/man1/config-edit.1*
+%{_mandir}/man1/*
 %{_mandir}/man3/*
