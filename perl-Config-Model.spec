@@ -17,6 +17,7 @@ BuildRequires: perl(Log::Log4perl)
 BuildRequires: perl(Parse::RecDescent)
 BuildRequires: perl(Test::Exception)
 BuildRequires: perl(Test::Warn)
+BuildRequires: perl(Text::Template)
 BuildRequires: perl(YAML::Any)
 
 BuildArch: noarch
