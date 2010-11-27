@@ -1,5 +1,5 @@
 %define upstream_name       Config-Model
-%define upstream_version 1.220
+%define upstream_version 1.222
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -16,6 +16,7 @@ BuildRequires: perl(Exception::Class)
 BuildRequires: perl(Log::Log4perl)
 BuildRequires: perl(Moose)
 BuildRequires: perl(Parse::RecDescent)
+BuildRequires: perl(Test::Command)
 BuildRequires: perl(Test::Exception)
 BuildRequires: perl(Test::Warn)
 BuildRequires: perl(Text::Template)
