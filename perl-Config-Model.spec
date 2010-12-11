@@ -1,5 +1,5 @@
 %define upstream_name       Config-Model
-%define upstream_version 1.225
+%define upstream_version 1.226
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
