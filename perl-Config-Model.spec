@@ -1,9 +1,10 @@
 %define upstream_name       Config-Model
 %define upstream_version 1.235
+%define _requires_exceptions perl(AptPkg::.*)
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 3
 License:    GPL or Artistic
 Group:      Development/Perl
 Summary:    Framework for config validation and edition
