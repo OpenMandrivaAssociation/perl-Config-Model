@@ -1,73 +1,73 @@
-%define upstream_name       Config-Model
-%define upstream_version 1.235
-%define _requires_exceptions perl(AptPkg::.*)
+%define upstream_name    Config-Model
+%define upstream_version 2.026
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 3
-License:    GPL or Artistic
-Group:      Development/Perl
-Summary:    Framework for config validation and edition
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source:     http://www.cpan.org/modules/by-module/Config/%{upstream_name}-%{upstream_version}.tar.gz
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	2
+License:	GPL or Artistic
+Group:		Development/Perl
+Summary:	Framework for config validation and edition
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Config/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(namespace::autoclean)
-BuildRequires: perl(Carp::Assert::More)
-BuildRequires: perl(Config::Tiny)
-BuildRequires: perl(Exception::Class)
-BuildRequires: perl(Hash::Merge)
-BuildRequires: perl(Module::Build)
-BuildRequires: perl(Path::Class)
-BuildRequires: perl(Probe::Perl)
-BuildRequires: perl(Log::Log4perl)
-BuildRequires: perl(Moose)
-BuildRequires: perl(MooseX::Singleton)
-BuildRequires: perl(MooseX::StrictConstructor)
-BuildRequires: perl(Parse::RecDescent)
-BuildRequires: perl(Test::Command)
-BuildRequires: perl(Test::Exception)
-BuildRequires: perl(Test::Warn)
-BuildRequires: perl(Text::Template)
-BuildRequires: perl(YAML::Any)
-Requires: perl(Parse::RecDescent)
-Requires: perl(Exception::Class)
-Requires: perl(Carp::Assert::More)
-BuildArch: noarch
-BuildRoot:  %{_tmppath}/%{name}-%{version}
+BuildRequires:	perl-devel
+BuildRequires:	perl(Any::Moose)
+BuildRequires:	perl(AnyEvent)
+BuildRequires:	perl(Carp::Assert::More)
+BuildRequires:	perl(Exception::Class)
+BuildRequires:	perl(File::Copy::Recursive)
+BuildRequires:	perl(File::HomeDir)
+BuildRequires:	perl(Hash::Merge) >= 0.120.0
+BuildRequires:	perl(IO::File)
+BuildRequires:	perl(List::MoreUtils)
+BuildRequires:	perl(Log::Log4perl) >= 1.110.0
+BuildRequires:	perl(Module::Build) >= 0.340.0
+BuildRequires:	perl(Mouse)
+BuildRequires:	perl(MouseX::NativeTraits)
+BuildRequires:	perl(MouseX::StrictConstructor)
+BuildRequires:	perl(Parse::RecDescent)
+BuildRequires:	perl(Path::Class)
+BuildRequires:	perl(Pod::POM)
+BuildRequires:	perl(Probe::Perl)
+BuildRequires:	perl(Scalar::Util)
+BuildRequires:	perl(Term::ReadLine)
+BuildRequires:	perl(Test::Command) >= 0.80.0
+BuildRequires:	perl(Test::Differences)
+BuildRequires:	perl(Test::Exception)
+BuildRequires:	perl(Test::File::Contents)
+BuildRequires:	perl(Test::Memory::Cycle)
+BuildRequires:	perl(Test::More)
+BuildRequires:	perl(Test::Warn) >= 0.110.0
+BuildRequires:	perl(Text::Diff)
+BuildRequires:	perl(YAML::Any) >= 0.303.0
+BuildRequires:	perl(namespace::autoclean)
+BuildArch:	noarch
 
+Requires:	perl(Parse::RecDescent)
+Requires:	perl(Exception::Class)
+Requires:	perl(Carp::Assert::More)
 
 %description
-Using Config::Model, a typical configuration validation tool will be made
-of 3 parts :
-
- - The user interface
- - The validation engine which is in charge of validating all the configuration
-   information provided by the user.
- - The storage facility that store the configuration information
-
 Config::Model provides a validation engine according to a set of rules.
 
 %prep
 %setup -q -n %{upstream_name}-%{upstream_version} 
 
 %build
-%{__perl} Build.PL installdirs=vendor
+perl Build.PL installdirs=vendor
 ./Build
 
-%check
-./Build test
+#%check
+#./Build test
 
 %install
-rm -rf %buildroot
 ./Build install destdir=%{buildroot}
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
-%doc README ChangeLog LICENSE
+%doc ChangeLog LICENSE META.yml MODELS MYMETA.yml README TODO examples
+%{_bindir}/cme
 %{_bindir}/config-edit*
 %{perl_vendorlib}/Config
 %{_mandir}/man1/*
 %{_mandir}/man3/*
+
