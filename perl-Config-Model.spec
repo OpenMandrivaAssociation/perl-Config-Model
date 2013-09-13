@@ -1,14 +1,14 @@
 %define upstream_name    Config-Model
-%define upstream_version 2.026
+%define upstream_version 2.040
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	2
+Release:	1
 License:	GPL or Artistic
 Group:		Development/Perl
 Summary:	Framework for config validation and edition
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Config/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Config/Config-Model-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(Any::Moose)
@@ -64,10 +64,11 @@ perl Build.PL installdirs=vendor
 ./Build install destdir=%{buildroot}
 
 %files
-%doc ChangeLog LICENSE META.yml MODELS MYMETA.yml README TODO examples
+%doc  LICENSE META.yml MODELS MYMETA.yml  TODO examples
 %{_bindir}/cme
 %{_bindir}/config-edit*
 %{perl_vendorlib}/Config
 %{_mandir}/man1/*
 %{_mandir}/man3/*
+
 
