@@ -1,5 +1,5 @@
 %define upstream_name    Config-Model
-%define upstream_version 2.040
+%define upstream_version 2.041
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
@@ -70,5 +70,6 @@ perl Build.PL installdirs=vendor
 %{perl_vendorlib}/Config
 %{_mandir}/man1/*
 %{_mandir}/man3/*
+
 
 
