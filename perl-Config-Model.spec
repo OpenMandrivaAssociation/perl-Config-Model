@@ -7,7 +7,7 @@ Release:	3
 License:	GPL or Artistic
 Group:		Development/Perl
 Summary:	Framework for config validation and edition
-Url:		http://search.cpan.org/dist/%{upstream_name}
+Url:		https://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/Config/Config-Model-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
