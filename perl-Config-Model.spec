@@ -1,14 +1,14 @@
 %define upstream_name    Config-Model
-%define upstream_version 2.041
+%define upstream_version 2.166
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Version:	%{upstream_version}
+Release:	1
 License:	GPL or Artistic
 Group:		Development/Perl
 Summary:	Framework for config validation and edition
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Config/Config-Model-%{upstream_version}.tar.gz
+Url:		https://github.com/dod38fr/config-model/wiki
+Source0:	https://cpan.metacpan.org/authors/id/D/DD/DDUMONT/Config-Model-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(Any::Moose)
